@@ -202,7 +202,7 @@ footer a{
     font-weight: bolder;
 }
 /* Media queries*/
-@media (max-width: 780px) {
+@media  only screen and (max-width: 780px) {
     nav {
         display: grid;
         gap: 20px;
