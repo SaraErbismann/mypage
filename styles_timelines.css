@@ -1,0 +1,225 @@
+/*general starts*/
+:root {
+    --white: white;
+    --grey: #a3a18d;
+    --mauve: #c6a6a2;
+    --faded: rgba(198, 166, 162, 0.9);
+    --blue: #172953;
+    --dark: black;
+    --shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+html {
+    box-sizing: border-box;
+    font-family: 'Urbanist';
+    color: var(--dark);
+}
+body {
+    background-color: white;
+    line-height: 1.4;
+    margin: 0px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+/*Navbar*/
+nav {
+    display: grid;
+    gap: 20px;
+    padding: 10px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    'name list';
+}
+.main-nav ul {
+    grid-area: list;
+    display: grid;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    grid-template-columns: repeat(5, 1fr);
+}
+#name {
+    grid-area: name;
+    text-align: start;
+    font-size: 1.7rem;
+    font-weight: bold;
+    pointer-events: none;
+    text-transform: uppercase;
+    background-color: var(--mauve);
+    color: var(--white);
+    padding-left: 10px;
+}
+.main-nav li {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0.8rem;
+} 
+.main-nav a {
+    text-decoration: none;
+    color: var(--dark);
+}
+.main-nav li:hover {
+    border-bottom: 2px solid var(--faded);
+    font-weight: bolder;
+}
+.main-nav li:active {
+    background-color: var(--mauve);
+    color: white;
+    font-weight: bold;
+}
+/*Footer*/
+footer {
+    display: grid;
+    background-color: var(--faded);
+    padding-top: 20px;
+    padding-left: 20px;
+    grid-template-areas: 
+    'author contact sitemap'
+    'validator contact sitemap';
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+footer a{
+    text-decoration: none;
+    color: var(--dark);
+}
+footer p {
+    text-transform: uppercase;
+}
+.footerAuthor {
+    grid-area: author;
+}
+.footerValidator {
+    grid-area: validator;
+}
+.footerContactInfo {
+    grid-area: contact;
+}
+.footerSitemap {
+    grid-area: sitemap;
+}
+.footerSitemap li:hover {
+    font-weight: bolder;
+    text-decoration: underline;
+}
+/*general ends*/
+header {
+    padding-left: 10px;
+}
+/*Timeline*/
+.timeline {
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 3px;
+    grid-template-areas: 
+    'component1 line1'
+    'component2 line2'
+    'component3 line3'
+    'component4 line4';
+}
+.timelineComponent {
+    margin: 0px 20px 20px 20px;
+}
+.timelineDate {
+    text-transform: uppercase;
+}
+.timelineMiddle {
+    position: relative;
+    background-color: var(--mauve);
+    grid-column: 2;
+}
+.timelinePoint {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: var(--mauve);
+    border-radius: 50%;
+}
+.timelineComponent--bg {
+    padding: 1.5em;
+    background: white; 
+    box-shadow: var(--shadow);
+}
+.timelineTitle {
+    margin: 0px;
+    text-transform: uppercase;
+}
+.timelineText {
+    line-height: 1.5;
+}
+.timeline li {
+    list-style: none;
+}
+h1 {
+    text-transform: uppercase;
+    padding-left: 10px;
+}
+
+/* Media queries*/
+@media (max-width: 780px) {
+    nav {
+        display: grid;
+        gap: 20px;
+        padding: 10px;
+        align-content: center;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'name' 
+        'list';
+    }
+    .main-nav ul {
+        grid-area: list;
+        display: grid;
+        gap: 20px;
+        padding: 0;
+        list-style: none;
+        font-size: 1.2rem;
+        grid-template-columns: 1fr;
+    }
+    .main-nav li:hover {
+        border-bottom: none;
+        font-weight: bolder;
+    }
+    #name {
+        grid-area: name;
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: bold;
+        pointer-events: none;
+        text-transform: uppercase;
+        padding: 10px;
+    }
+    .main-nav li {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0.8rem;
+    } 
+    header {
+        padding-left: 10px;
+        text-decoration: underline var(--mauve);
+        text-align: center;
+    }
+    footer {
+        display: grid;
+        background-color: var(--faded);
+        padding: 20px;
+        grid-template-areas: 
+        'author'
+        'validator' 
+        'contact'
+        'sitemap';
+    }
+    .underline {
+        border-bottom: 2px solid var(--faded);
+    }
+}
