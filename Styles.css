@@ -197,6 +197,24 @@ footer p {
     background-color: var(--mauve);
     font-weight: bolder;
 }
+.mottoWrapper {
+    display: grid;
+    gap: 30px;
+    margin: 10px;
+    grid-template-areas: 
+    'header header'
+    'picture content';
+}
+.mottoHeader {
+    grid-area: header;
+}
+.mottoImage {
+    grid-area: picture;
+}
+.mottoContent {
+    grid-area: content;
+    padding: 40px 2px;
+}
 /* Media queries*/
 @media only screen and  (max-width: 780px) {
     .wrapper {
@@ -268,6 +286,17 @@ footer p {
         'education'
         'skills' 
         'hobbies';
+    }
+    .mottoWrapper {
+        display: grid;
+        gap: 00px;
+        grid-template-areas: 
+        'header'
+        'picture' 
+        'content';
+    }
+    .mottoImage {
+        align-self: center;
     }
     footer {
         display: grid;
